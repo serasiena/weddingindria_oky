@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Wedding of Oky & Indria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: url('images/bulu-merak-background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+    header {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+    }
+    .open-invite {
+      margin-top: 20px;
+      background-color: rgba(255,255,255,0.1);
+      border: 2px solid #fff;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1.2em;
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: rgba(0,0,0,0.6);
+    }
+    .quote {
+      font-style: italic;
+      margin: 30px 0;
+    }
+    .countdown {
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+    .pengantin {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .pengantin div {
+      text-align: center;
+    }
+    .pengantin img {
+      max-width: 150px;
+      border-radius: 10px;
+    }
+    .rekening {
+      background-color: rgba(255,255,255,0.2);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Wedding of Oky & Indria</h1>
+    <div class="open-invite" onclick="document.getElementById('undangan').scrollIntoView({behavior: 'smooth'})">
+      Buka Undangan
+    </div>
+  </header>
+
+  <section id="undangan">
+    <h2>O & I</h2>
+    <div class="quote">
+      “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri,<br>
+      supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang.<br>
+      Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.”<br>
+      <b>QS. Ar-Rum 21</b>
+    </div>
+
+    <h3>BISMILLAHIRRAHMANIRRAHIM</h3>
+    <p>Maha suci Allah yang telah menciptakan<br>mahluk-Nya berpasang-pasangan.<br>Ya Allah rahmatilah pernikahan kami</p>
+
+    <div class="pengantin">
+      <div>
+        <img src="images/animasi-cewek.gif" alt="Indria">
+        <p>Indria Istiqomah<br>(Putri dari Alm. Bpk Tukiman & Ibu Martin)</p>
+      </div>
+      <div>
+        <img src="images/animasi-cowok.gif" alt="Oky">
+        <p>Oky Riyan Nofaldi<br>(Putra dari Bpk Hadi Sutikno & Ibu Nurhayani)</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Save The Date</h2>
+    <p>Dengan segala kerendahan hati,<br>
+    kami bermaksud mengundang Bapak/Ibu/Saudara/i,<br>
+    untuk menghadiri acara pernikahan kami yang akan dilaksanakan pada :</p>
+    <p><b>Akad:</b> Kamis, 07 Agustus 2025 pukul 07.00 WIB<br>
+    <b>Resepsi:</b> Kamis, 07 Agustus 2025 pukul 10.00 WIB<br>
+    <b>Lokasi:</b> Kediaman mempelai perempuan<br>
+    Dkh Bedagan RT 001 RW 003, Ds Pulung, Kec Pulung, Kab Ponorogo</p>
+
+    <div class="countdown" id="countdown"></div>
+  </section>
+
+  <section class="rekening">
+    <p>Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.<br>
+    Dan jika memberi adalah ungkapan tanda kasih Anda,<br>
+    Anda dapat memberi kado secara cashless ke rekening berikut:</p>
+    <p><b>Oky Riyan Nofaldi - BCA 2890962745</b><br>
+    <b>Indria Istiqomah - BRI 384501021701535</b></p>
+  </section>
+
+  <footer>
+    Atas kehadiran dan Doa Restunya kami ucapkan terimakasih.<br><br>
+    Kami Yang Berbahagia,<br>
+    Keluarga Besar Kedua Mempelai<br><br>
+    <b>Oky & Indria</b>
+  </footer>
+
+  <script>
+    const countdown = document.getElementById('countdown');
+    const targetDate = new Date('2025-08-07T07:00:00+07:00').getTime();
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `Countdown: ${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
+    }, 1000);
+  </script>
+</body>
+</html>
