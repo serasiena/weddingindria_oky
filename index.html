@@ -69,16 +69,27 @@
       font-weight: bold;
     }
   </style>
+
+  <!-- Backsound -->
+  <audio autoplay loop hidden>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_93f4b2b3f8.mp3?filename=wedding-ceremony-112441.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Snow Effect -->
+  <script src="https://cdn.jsdelivr.net/gh/lokesh-coder/snowflake/snowflake.min.js"></script>
 </head>
 <body>
-  <header>
+  <header class="animate__animated animate__fadeInDown">
     <h1>The Wedding of Oky & Indria</h1>
     <div class="open-invite" onclick="document.getElementById('undangan').scrollIntoView({behavior: 'smooth'})">
       Buka Undangan
     </div>
   </header>
 
-  <section id="undangan">
+  <section id="undangan" class="animate__animated animate__fadeInUp">
     <h2>O & I</h2>
     <div class="quote">
       “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri,<br>
@@ -136,14 +147,14 @@
     setInterval(() => {
       const now = new Date().getTime();
       const distance = targetDate - now;
-
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
       countdown.innerHTML = `Countdown: ${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
     }, 1000);
+
+    snow.init(); // Activate snow effect
   </script>
 </body>
 </html>
